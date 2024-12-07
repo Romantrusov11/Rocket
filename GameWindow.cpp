@@ -207,7 +207,14 @@ void GameWindow::updateBall() {
     if (ball.x + ball.radius > GAME_WIDTH || ball.x - ball.radius < 0) {
         ball.xDirection = -ball.xDirection;
     }
+    if (ball.x > rocket.x and ball.x < rocket.x + rocket.width and ball.y > rocket.y and ball.y < rocket.y + rocket.height){
+        ball.y = ball.y + 5;
+    }
 
+    if (ball.x > rocket2.x and ball.x < rocket2.x + rocket2.width and ball.y > rocket2.y and ball.y < rocket2.y + rocket2.height){
+        ball.y = ball.y - 5;
+    }
+        
     if (ball.y + ball.radius > rocket.y && ball.y - ball.radius < rocket.y + rocket.height &&
     ball.x + ball.radius > rocket.x && ball.x - ball.radius < rocket.x + rocket.width) {
         if (ball.x < rocket.x || ball.x > rocket.x + rocket.width) {
