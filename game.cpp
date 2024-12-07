@@ -47,7 +47,7 @@ class GameWindow : public Fl_Double_Window {
 public:
     GameWindow(int w, int h, const char* title = 0) : Fl_Double_Window(w, h, title) {
         color(FL_WHITE);
-        bgImage = new Fl_JPEG_Image("C:/cpp/01c++/logo_company_968x544_16_almazantey.jpg");
+        bgImage = new Fl_JPEG_Image("C:/cpp/project_game/logo_company_968x544_16_almazantey.jpg");
 
         startButton = new Fl_Button(GAME_WIDTH / 2 - 50, GAME_HEIGHT / 2 - 100, 100, 40, "Start");
         startButton->callback(startButtonCallback, this);
@@ -235,7 +235,13 @@ public:
         if (ball.x + ball.radius > GAME_WIDTH || ball.x - ball.radius < 0) {
             ball.xDirection = -ball.xDirection;
         }
+        if (ball.x > rocket.x and ball.x < rocket.x + rocket.width and ball.y > rocket.y and ball.y < rocket.y + rocket.height){
+        ball.y = ball.y + 5;
+        }
 
+        if (ball.x > rocket2.x and ball.x < rocket2.x + rocket2.width and ball.y > rocket2.y and ball.y < rocket2.y + rocket2.height){
+        ball.y = ball.y - 5;
+        }
         if (ball.y + ball.radius > rocket.y && ball.y - ball.radius < rocket.y + rocket.height &&
         ball.x + ball.radius > rocket.x && ball.x - ball.radius < rocket.x + rocket.width) {
             if (ball.x < rocket.x || ball.x > rocket.x + rocket.width) {
