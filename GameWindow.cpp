@@ -17,7 +17,7 @@ void GameWindow::Timer_CB(void* data) {
 
 GameWindow::GameWindow(int w, int h, const char* title = 0): Fl_Double_Window(w, h, title) {
     color(FL_WHITE);
-    bgImage = new Fl_JPEG_Image("C:/cpp/01c++/logo_company_968x544_16_almazantey.jpg");
+    bgImage = new Fl_JPEG_Image("ваш путь до картинки/logo_company_968x544_16_almazantey.jpg");
 
     startButton = new Fl_Button(GAME_WIDTH / 2 - 50, GAME_HEIGHT / 2 - 100, 100, 40, "Start");
     startButton->callback(startButtonCallback, this);
