@@ -62,8 +62,8 @@ void GameWindow::handleKeys(){
             if (prognoz_coordinate_x > prognoz_rocket && prognoz_coordinate_x < prognoz_rocket + rocket.width && prognoz_coordinate_y > rocket.y && prognoz_coordinate_y < rocket.y + rocket.height ){
                 ball.x = prognoz_rocket - ball.radius;
                 if (ball.x < 0){
-                    ball.y = ball.y - ball.radius;
-                    ball.x = ball.x + ball.radius;
+                    ball.y = rocket.y - ball.radius;
+                    ball.x = rocket.x;
                 }
                 
             };
@@ -72,11 +72,11 @@ void GameWindow::handleKeys(){
         if (activeKeys.count(FL_Right)) {
             int prognoz_rocket = rocket.x + rocket.xDirection;
             if (prognoz_coordinate_x > prognoz_rocket && prognoz_coordinate_x < prognoz_rocket + rocket.width && prognoz_coordinate_y > rocket.y && prognoz_coordinate_y < rocket.y + rocket.height ){
-                if (ball.x > GAME_WIDTH){
-                    ball.y = ball.y - ball.radius;
-                    ball.x = ball.x - ball.radius;
-                }
                 ball.x = prognoz_rocket + rocket.width + ball.radius;
+                if (ball.x > GAME_WIDTH){
+                    ball.y = rocket.y - ball.radius;
+                    ball.x = rocket.x + rocket.width;
+                }
             };
             rocket.x += rocket.xDirection;  // Перемещение ракетки 1 вправо
         }
@@ -85,8 +85,8 @@ void GameWindow::handleKeys(){
             if (prognoz_coordinate_x > prognoz_rocket2 && prognoz_coordinate_x < prognoz_rocket2 + rocket.width && prognoz_coordinate_y > rocket.y && prognoz_coordinate_y < rocket.y + rocket.height ){
                 ball.x = prognoz_rocket2 - ball.radius;
                 if (ball.x < 0){
-                    ball.y = ball.y + ball.radius;
-                    ball.x = ball.x + ball.radius;
+                    ball.y = rocket2.y + rocket.height + ball.radius;
+                    ball.x = rocket2.x;
                 }
             };
             rocket2.x -= rocket2.xDirection;  // Перемещение ракетки 2 влево
@@ -94,11 +94,11 @@ void GameWindow::handleKeys(){
         if (activeKeys.count('d')) {
             int prognoz_rocket2 = rocket2.x + rocket2.xDirection;
             if (prognoz_coordinate_x > prognoz_rocket2 && prognoz_coordinate_x < prognoz_rocket2 + rocket.width && prognoz_coordinate_y > rocket.y && prognoz_coordinate_y < rocket.y + rocket.height ){
+                 ball.x = prognoz_rocket2 + rocket2.width + ball.radius;
                 if (ball.x > GAME_WIDTH){
-                    ball.y = ball.y + ball.radius;
-                    ball.x = ball.x - ball.radius;
+                    ball.y = rocket2.y + rocket2.height + ball.radius;
+                    ball.x = rocket2.x + rocket.width;
                 }
-                ball.x = prognoz_rocket2 + rocket2.width + ball.radius;
             };
             rocket2.x += rocket2.xDirection;  // Перемещение ракетки 2 вправо
         }
@@ -106,6 +106,7 @@ void GameWindow::handleKeys(){
         clampRocketPosition();
         clampRocket2Position();
     }
+
 
 void GameWindow::clampRocketPosition() {
     if (rocket.x < 0) rocket.x = 0;
