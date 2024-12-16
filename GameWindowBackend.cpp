@@ -4,6 +4,8 @@
 #include "Rocket2.h"
 #include <FL/Fl.H>
 
+
+
 void GameWindow::Timer_CB(void* data) {
     GameWindow* gw = (GameWindow*)data;
     gw->update();
@@ -50,7 +52,7 @@ void GameWindow::restartGame() {
     startButton->hide();
 
     redraw();
-    Fl::add_timeout(1.0 / 60, Timer_CB, this);
+    Fl::add_timeout(1.0 / 90, Timer_CB, this);
 }
 
 void GameWindow::handleKeys(){
@@ -187,6 +189,9 @@ void GameWindow::updateBall() {
             gameOver = true;
             winner = "Player 2 wins!";
         }
+        if (gameOver || victory) {
+        restartButton->show();
+    }
     }
 
 void GameWindow::update() {

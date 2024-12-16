@@ -17,7 +17,8 @@ const int GAME_HEIGHT = 500;
 
 class GameWindow : public  Fl_Double_Window {
     public:
-    GameWindow(int width, int height, const char* title);
+    
+    GameWindow(int width = 500, int height = 500, const char* title = "Rocket");
     //frontend functions:
     void draw() override;
     void drawBackground();

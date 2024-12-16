@@ -1,7 +1,6 @@
 #include "GameWindow.h"
 #include <FL/Fl.H>
 #include <FL/fl_draw.H>
-
 #include "Ball.h"
 #include "Rocket.h"
 #include "Rocket2.h"
@@ -19,8 +18,6 @@ GameWindow::GameWindow(int w, int h, const char* title): Fl_Double_Window(w, h, 
     restartButton = new Fl_Button(GAME_WIDTH / 2 - 50, GAME_HEIGHT / 2 + 50, 100, 40, "Restart");
     restartButton->callback(restartButtonCallback, this);
     restartButton->hide();
-
-
 }
 
 
@@ -39,7 +36,6 @@ void GameWindow::draw() {
 
     if (gameOver || victory) {
         drawEndGameMessage();
-        restartButton->show();
     }
 
     if (gameInProgress) {

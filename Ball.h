@@ -7,8 +7,9 @@
 
 
 struct Ball {
-    int x = 100;
-    int y = 80;
+    Ball() : x(), y(), radius(10), xDirection(2), yDirection(4), score(0), color(FL_RED) {}
+    float x = 100;
+    float y = 80;
     int radius = 10;
     float xDirection = 2;
     float yDirection = 4;
