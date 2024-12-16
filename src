@@ -1,0 +1,10 @@
+<script>start("/Users/pavelatrusev/CLionProjects/Rocket/src/");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("Ball.h","Ball.h",0,377,"377 B",1734361380,"12/16/24, 6:03:00 PM");</script>
+<script>addRow("GameWindow.cpp","GameWindow.cpp",0,68,"68 B",1734351786,"12/16/24, 3:23:06 PM");</script>
+<script>addRow("GameWindow.h","GameWindow.h",0,1481,"1.4 kB",1734354203,"12/16/24, 4:03:23 PM");</script>
+<script>addRow("GameWindowBackend.cpp","GameWindowBackend.cpp",0,7329,"7.2 kB",1734363060,"12/16/24, 6:31:00 PM");</script>
+<script>addRow("GameWindowFrontend.cpp","GameWindowFrontend.cpp",0,2541,"2.5 kB",1734363060,"12/16/24, 6:31:00 PM");</script>
+<script>addRow("main.cpp","main.cpp",0,284,"284 B",1733583275,"12/7/24, 5:54:35 PM");</script>
+<script>addRow("Rocket.h","Rocket.h",0,337,"337 B",1734353256,"12/16/24, 3:47:36 PM");</script>
+<script>addRow("Rocket2.h","Rocket2.h",0,351,"351 B",1734353256,"12/16/24, 3:47:36 PM");</script>
